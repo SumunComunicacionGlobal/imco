@@ -1,19 +1,33 @@
 @use '../abstracts/mixins' as *;
 
+
+@view-transition {
+    navigation: auto;
+}
+
 main {
-    animation: bodyAnimation ease-in-out 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    view-transition-name: mainAnimation;
+}
+
+::view-transition-old(mainAnimation) {
+    animation: bodyAnimation 0.5s linear forwards;
+}
+
+::view-transition-new(mainAnimation) {
+    animation: bodyAnimation 0.6s linear reverse;
 }
  
 @keyframes bodyAnimation {
     0% {
-        opacity: 0;
+        opacity: 1;
+        transform: translateY(0);
     }
     100% {
-        opacity: 1;
+        opacity: 0;
+        transform: translateY(50px);
      }
 }
+
 
 @keyframes move-up-block {
 	0% {

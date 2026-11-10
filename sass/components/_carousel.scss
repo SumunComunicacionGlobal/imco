@@ -10,7 +10,6 @@
     }
 
     .slick-next, .slick-prev {
-        top: calc(100% + 1rem);
         color: var(--wp--preset--color--neutral-white);
         width: 3.5rem;
         height: 3.5rem;
@@ -44,7 +43,7 @@
     }
 
     .slick-prev::before {
-        rotate: 180deg;
+        content: url("assets/icons/arrow-left.svg");
     }
 
     .slick-dots li button:before {
