@@ -1,0 +1,16 @@
+.home #hero {
+    position: relative;
+}
+
+#hero-image .wp-block-post-featured-image {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    img {
+        object-fit: cover;
+        height: 600px;
+    }
+}

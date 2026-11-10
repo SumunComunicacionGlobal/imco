@@ -1,0 +1,19 @@
+.wpcf7-acceptance .wpcf7-list-item {
+	margin: 0;
+}
+
+.item-form {
+	label {
+		display: grid;
+		gap: var(--wp--preset--spacing--10);
+		margin-bottom: 1.5rem;
+		grid-template-columns: 0.23fr 1fr;
+
+		
+	}
+}
+
+form input[type="submit"] {
+	min-height: 46px;
+	border-radius: 4px;
+}

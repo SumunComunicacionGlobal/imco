@@ -1,0 +1,57 @@
+.horiz-gallery-strip,
+.horiz-gallery-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+  position: relative;
+}
+
+.horiz-gallery-wrapper {
+  width: 100%;
+  max-width: none;
+  overflow: hidden;
+}
+
+.horiz-gallery-strip {
+  flex: 0 0 auto;
+  width: max-content;
+  max-width: none;
+}
+
+#portfolio {
+  position: relative;
+}
+
+#portfolio .wp-block-post-template {
+  display: flex;
+  flex-flow: row nowrap;
+  width: max-content;
+  min-width: 100%;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  will-change: transform;
+  z-index: 9;
+  margin-left: var(--wp--custom--layout--gap);
+  margin-right: var(--wp--custom--layout--gap);
+}
+
+#portfolio .wp-block-post {
+  flex: 0 0 min(82vw, 32.375rem);
+  max-width: none;
+  margin-block-start: 0;
+  box-sizing: border-box;
+}
+
+.project-wrap {
+  width: 16.66vw;
+margin-top: 7rem;
+  padding: 2rem;
+  box-sizing: content-box;
+}
+
+.project-wrap img {
+  width: 100%;
+  object-fit: cover;
+}
