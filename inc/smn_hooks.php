@@ -22,3 +22,14 @@ add_filter('render_block_data', function ($parsed_block) {
 
     return $parsed_block; 
 });
+
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    if (is_singular('proyecto')) {
+        array_splice($links, 1, 0, [[
+            'url' => home_url('/proyectos/'),
+            'text' => 'Proyectos',
+        ]]);
+    }
+
+    return $links;
+});
