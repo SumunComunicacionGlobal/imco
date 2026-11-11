@@ -15,6 +15,12 @@
         height: 3.5rem;
         z-index: 2;
 
+        top: 112%;
+        
+        @media ($below-mobile) {
+            top: 106%;
+        }
+
         &::before {
             content: url("assets/icons/arrow-right.svg");
             width: 3.5rem;
