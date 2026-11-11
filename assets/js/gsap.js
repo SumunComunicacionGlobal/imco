@@ -70,27 +70,35 @@ const portfolio = document.getElementById("portfolio");
 
 if (portfolio) {
   const horizontalSections = gsap.utils.toArray(".horiz-gallery-wrapper", portfolio);
+  const media = gsap.matchMedia();
 
-  horizontalSections.forEach(function (sec) {
-    const pinWrap = sec.querySelector(".horiz-gallery-strip");
+  media.add({
+    isMobile: "(max-width: 767px)",
+    isDesktop: "(min-width: 768px)"
+  }, function (context) {
+    const start = context.conditions.isMobile ? "top 8%" : "top 20%";
 
-    if (!pinWrap) {
-      return;
-    }
+    horizontalSections.forEach(function (sec) {
+      const pinWrap = sec.querySelector(".horiz-gallery-strip");
 
-    const getHorizontalScrollLength = () => Math.max(0, pinWrap.scrollWidth - sec.clientWidth);
-
-    gsap.to(pinWrap, {
-      x: () => -getHorizontalScrollLength(),
-      ease: "none",
-      scrollTrigger: {
-        scrub: true,
-        trigger: sec,
-        pin: sec,
-        start: "top top+=80",
-        end: () => `+=${getHorizontalScrollLength()}`,
-        invalidateOnRefresh: true
+      if (!pinWrap) {
+        return;
       }
+
+      const getHorizontalScrollLength = () => Math.max(0, pinWrap.scrollWidth - sec.clientWidth);
+
+      gsap.to(pinWrap, {
+        x: () => -getHorizontalScrollLength(),
+        ease: "none",
+        scrollTrigger: {
+          scrub: true,
+          trigger: sec,
+          pin: sec,
+          start: start,
+          end: () => `+=${getHorizontalScrollLength()}`,
+          invalidateOnRefresh: true
+        }
+      });
     });
   });
 }

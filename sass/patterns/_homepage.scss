@@ -76,3 +76,9 @@ main {
     top: 0;
     z-index: 99;
 }
+
+.box-line {
+    @media ($below-mobile) {
+        border: 1px solid var(--wp--preset--color--primary-30) !important;
+    }
+}
