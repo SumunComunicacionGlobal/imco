@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as *;
+
 .wpcf7-acceptance .wpcf7-list-item {
 	margin: 0;
 }
@@ -9,7 +11,9 @@
 		margin-bottom: 1.5rem;
 		grid-template-columns: 0.23fr 1fr;
 
-		
+		@media ($below-mobile) {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 
