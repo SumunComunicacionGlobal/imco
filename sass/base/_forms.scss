@@ -23,9 +23,10 @@ form input[type="submit"] {
 }
 
 .form-newsletter {
-	gap: var(--wp--preset--spacing--10 !important);
+	gap: var(--wp--preset--spacing--10);
+	grid-template-columns: 1fr  1fr auto;
 	
-	form input[type="submit"] {
+	input[type="submit"] {
 		max-width: 240px;
 	}
 
