@@ -74,5 +74,9 @@ $above-desktop: "min-width:1440px";
 		display: grid;
 		gap: var(--wp--custom--layout--gap);
 		grid-template-columns: repeat($i, 1fr);
+
+    @media ($below-mobile) {
+      grid-template-columns: 1fr !important;
+    }
 	}
 }
